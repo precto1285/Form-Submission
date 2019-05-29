@@ -31,6 +31,13 @@ UI.prototype.deleteContact = function (target) {
   }
 }
 
+// Clear Form
+UI.prototype.clearForm = function () {
+  document.getElementById('firstName').value = '';
+  document.getElementById('lastName').value = '';
+  document.getElementById('email').value = '';
+}
+
 //Show Alert
 UI.prototype.showAlert = function (specialAlert, className) {
   //create div
@@ -70,12 +77,12 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 
   //validation
   if (firstName === '' || lastName === '' || email === '') {
-    ui.showAlert('Please fill in ALL fields', 'bg-danger');
-
+    ui.showAlert('Please fill in ALL fields', 'bg-danger text-white');
   }
   else {
     ui.addContact(contact);
-    ui.showAlert('Contact Added', 'bg-success')
+    ui.showAlert('Contact Added', 'bg-warning')
+    ui.clearForm();
   }
   e.preventDefault();
 });
@@ -83,4 +90,10 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 
 
 // Event listener to delete contact
+document.getElementById('contact-list').addEventListener('click', function (e) {
+  const ui = new UI();
+  ui.deleteContact(e.target);
+  ui.showAlert('Contact Deleted', 'bg-secondary')
 
+  e.preventDefault();
+});
