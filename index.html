@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Order Form</title>
+  <title>Contact Form</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,37 +15,37 @@
 <body>
 
   <div class="container">
-    <div class="nav bg-primary text-white px-3 mb-4">
-      <h1>General Order Form</h1>
+    <div class="nav bg-primary text-white p-3 mb-4">
+      <h1>Contact Form</h1>
     </div>
     <!-- Form -->
-    <form id="contact-form" class="mb-5">
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" class="form-control" id="firstName">
+    <div class="border p-5 mb-5">
+      <form id="contact-form" class="mb-5">
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input type="text" class="form-control" id="firstName">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input type="text" class="form-control" id="lastName">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email">
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" class="form-control" id="lastName">
-          </div>
+        <div class="row">
+          <button type="submit" value="Submit" class="btn btn-success btn-block">Add Contact Info</button>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email">
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <button type="submit" value="Submit" class="btn btn-success btn-block">Add Contact Info</button>
-      </div>
-    </form>
-
+      </form>
+    </div>
     <!-- Table -->
     <div class="text-center">
       <h3>Contacts Table</h3>
