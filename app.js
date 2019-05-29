@@ -32,7 +32,6 @@ UI.prototype.deleteContact = (target) => {
   }
 }
 
-
 //Show Alert
 UI.prototype.showAlert = (specialAlert, className) => {
   //create dive
@@ -70,10 +69,12 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 
   //validation
   if (firstName === '' || lastName === '' || email === '') {
+    ui.showAlert('Please fill in ALL fields', 'bg-danger');
 
   }
   else {
-
+    ui.addContactToTable(contact);
+    ui.showAlert('Contact Added', 'bg-success')
   }
   e.preventDefault();
 });
