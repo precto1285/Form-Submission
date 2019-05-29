@@ -1,40 +1,39 @@
 // Contact Constructor
-Contact = (firstName, lastName, email) => {
+function Contact(firstName, lastName, email) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.email = email;
 };
 
 // UI Constructor
-UI = () => { };
-
+function UI() { }
 
 
 //Add Contact
-UI.prototype.addContactToTable = (contact) => {
+UI.prototype.addContact = function (contact) {
   const list = document.getElementById('contact-list'); //target table location
-  const row = document.createElement('tr'); //create a new table row
+  const row = document.createElement('tr'); //create a new table row element
   //create columns and show new table data
   row.innerHTML = `
     <td>${contact.firstName}</td>
     <td>${contact.lastName}</td>
     <td>${contact.email}</td>
-    <td><button class="btn btn-primary text-white delete">Delete</button></td>
+    <td><a href="#" class="delete">Delete</a></td>
   `;
 
   list.appendChild(row);
 }
 
 //Delete Contact
-UI.prototype.deleteContact = (target) => {
+UI.prototype.deleteContact = function (target) {
   if (target.className === 'delete') {
     target.parentElement.parentElement.remove();
   }
 }
 
 //Show Alert
-UI.prototype.showAlert = (specialAlert, className) => {
-  //create dive
+UI.prototype.showAlert = function (specialAlert, className) {
+  //create div
   const div = document.createElement('div');
   //add classes
   div.className = `alert ${className}`;
@@ -42,6 +41,8 @@ UI.prototype.showAlert = (specialAlert, className) => {
   div.appendChild(document.createTextNode(specialAlert));
   //get parent
   const container = document.querySelector('.container');
+  //get form
+  const form = document.querySelector('#contact-form');
   //insert alert
   container.insertBefore(div, form);
 
@@ -73,7 +74,7 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 
   }
   else {
-    ui.addContactToTable(contact);
+    ui.addContact(contact);
     ui.showAlert('Contact Added', 'bg-success')
   }
   e.preventDefault();
