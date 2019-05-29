@@ -8,9 +8,14 @@ Contact = (firstName, lastName, email) => {
 // UI Constructor
 UI = () => { };
 
-
 // Event listener to add Contact
 document.getElementById('contact-form').addEventListener('submit', (e) => {
-  console.log('clicked');
+
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+
+  console.log(firstName, lastName, email);
+
   e.preventDefault();
 });
